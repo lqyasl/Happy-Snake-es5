@@ -19,9 +19,10 @@
     // 2 开始游戏逻辑
     // 2.1 让蛇动起来
     runSnake()
-    
     // 2.3 键盘控制方向
+    bindKey()
     // 2.4 当蛇碰到食物，处理
+    
   }
 
   function runSnake () {
@@ -46,7 +47,27 @@
     }, 800)
   }
 
+  function bindKey () {
+    document.addEventListener('keydown', function (e) {
+      switch (e.keyCode) {
+        case 37:
+          that.snake.direction = 'left'
+          break
+        case 38:
+          that.snake.direction = 'top'
+          break
+        case 39:
+          that.snake.direction = 'right'
+          break
+        case 40:
+          that.snake.direction = 'bottom'
+          break
+      }
+    }, false)
+  }
+
   window.Game = Game
+
 })()
 
 // 测试代码
