@@ -11,9 +11,20 @@
   Game.prototype.start = function () {
     this.food.render(this.map)
     this.snake.render(this.map)
+    this.snake.move()
+    this.snake.render(this.map)
+    this.snake.move()
+    this.snake.render(this.map)
+    this.snake.move()
+    this.snake.render(this.map)
+    this.snake.move()
+    this.snake.render(this.map)
+
   }
 
   window.Game = Game
 })()
+
+// 测试代码
 var map = document.getElementById('map')
 var game = new Game(map)
