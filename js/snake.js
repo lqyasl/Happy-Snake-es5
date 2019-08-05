@@ -2,7 +2,7 @@
 ;(function () {
   var position = 'absolute'
 
-  function Snake (map, options) {
+  function Snake (options) {
     options = options || {}
     // 蛇的大小
     this.width = options.width || 20
@@ -15,7 +15,7 @@
       {x: 2, y: 2, color: 'hotpink'},
       {x: 1, y: 2, color: 'hotpink'}
     ]
-    this.render(map)
+    // this.render(map)
   }
 
   Snake.prototype.render = function (map) {
@@ -36,4 +36,4 @@
 })()
 
 // 测试代码
-var snake = new Snake(map)
+// var snake = new Snake(map)

@@ -13,7 +13,7 @@
     this.color = options.color || 'red'
 
     this.getRandom(map)
-    this.render(map)
+    // this.render(map)
   }
 
   Food.prototype.render = function (map) {
@@ -54,5 +54,5 @@
 
 })()
 
-var map = document.querySelector('#map')
-var food = new Food(map)
+// var map = document.querySelector('#map')
+// var food = new Food(map)
