@@ -2,7 +2,7 @@
 ;
 (function () {
   var position = 'absolute'
-  var elements = [] //记录食物，为删除做准备
+  var elements = [] //收集创建的食物元素，为后续删除做准备
 
   function Food(map, options) {
     options = options || {}
@@ -21,7 +21,7 @@
     remove()
 
     var f = document.createElement('div')
-    elements.push(f)
+    elements.push(f) //收集创建的食物元素，为后续删除做准备
     f.classList.add('food')
     f.style.position = position
     f.style.width = this.width + 'px'
@@ -54,5 +54,6 @@
 
 })()
 
+// 测试
 // var map = document.querySelector('#map')
 // var food = new Food(map)

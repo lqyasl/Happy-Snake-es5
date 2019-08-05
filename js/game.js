@@ -11,15 +11,11 @@
   Game.prototype.start = function () {
     this.food.render(this.map)
     this.snake.render(this.map)
-    this.snake.move()
-    this.snake.render(this.map)
-    this.snake.move()
-    this.snake.render(this.map)
-    this.snake.move()
-    this.snake.render(this.map)
-    this.snake.move()
-    this.snake.render(this.map)
-
+    // 测试
+    setInterval(() => {
+      this.snake.move()
+      this.snake.render(this.map)
+    }, 1000);
   }
 
   window.Game = Game
