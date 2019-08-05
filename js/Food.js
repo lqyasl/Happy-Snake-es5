@@ -33,10 +33,8 @@
   }
 
   Food.prototype.getRandom = function (map) {
-    var mapWidth = parseInt(Tools.getComputedStyle(map, 'width'))
-    var mapHeight = parseInt(Tools.getComputedStyle(map, 'height'))
-    this.x = Tools.getRandomIntInclusive(0, mapWidth / this.width - 1) * this.width
-    this.y = Tools.getRandomIntInclusive(0, mapHeight / this.height - 1) * this.height
+    this.x = Tools.getRandomIntInclusive(0, map.offsetWidth / this.width - 1) * this.width
+    this.y = Tools.getRandomIntInclusive(0, map.offsetHeight / this.height - 1) * this.height
   }
 
   function remove() {
