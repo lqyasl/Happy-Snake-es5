@@ -22,12 +22,13 @@
     // 2.3 键盘控制方向
     bindKey()
     // 2.4 当蛇碰到食物，处理
+    // 判断蛇头的坐标是否与食物的坐标重合
     
   }
 
   function runSnake () {
     timerId = setInterval(function () {
-      that.snake.move()
+      that.snake.move(that.food, that.map)
       that.snake.render(that.map)
       // 2.2 当蛇碰到边界，game over
       // 获取蛇头的坐标
@@ -44,7 +45,8 @@
         alert('game over!')
         clearInterval(timerId)
       }
-    }, 800)
+
+    }, 200)
   }
 
   function bindKey () {

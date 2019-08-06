@@ -16,7 +16,6 @@
       {x: 2, y: 2, color: 'hotpink'},
       {x: 1, y: 2, color: 'hotpink'}
     ]
-    // this.render(map)
   }
 
   Snake.prototype.render = function (map) {
@@ -35,7 +34,7 @@
     }
   }
 
-  Snake.prototype.move = function () {
+  Snake.prototype.move = function (food, map) {
     // 蛇的移动
     // 删除之前创建的蛇
     remove()
@@ -44,25 +43,43 @@
       this.body[i].x = this.body[i - 1].x
       this.body[i].y = this.body[i - 1].y
     }
+    var head = this.body[0]
     // 蛇头的移动：方向控制
     // 判断方向
     switch (this.direction) {
       case 'right':
-        this.body[0].x +=1
+        head.x +=1
         break
     
       case 'left':
-        this.body[0].x -=1
+        head.x -=1
         break
     
       case 'top':
-        this.body[0].y -=1
+        head.y -=1
         break
     
       case 'bottom':
-        this.body[0].y +=1
+        head.y +=1
         break
     }
+
+    // 2.4 当蛇碰到食物，处理
+    // 判断蛇头的坐标是否与食物的坐标重合
+    var headX = head.x * this.width
+    var headY = head.y * this.height
+    
+    if (headX === food.x && headY === food.y) {
+      food.render(map)
+      console.log('1111111 :', 1111111);
+      var last = this.body[this.body.length - 1]
+      this.body.push({
+        x: last.x,
+        y: last.y,
+        color: last.color
+      })
+    }
+
   }
 
   function remove() {
@@ -79,5 +96,3 @@
   window.Snake = Snake
 })()
 
-// 测试代码
-// var snake = new Snake(map)

@@ -1,6 +1,7 @@
 // 匿名函数自调用，避免命名冲突
 ;
 (function () {
+
   var position = 'absolute'
   var elements = [] //收集创建的食物元素，为后续删除做准备
 
@@ -11,12 +12,11 @@
     this.width = options.width || 20
     this.height = options.height || 20
     this.color = options.color || 'red'
-
-    this.getRandom(map)
-    // this.render(map)
   }
 
   Food.prototype.render = function (map) {
+    // 在每次渲染之前先生成随机坐标 
+    this.getRandom(map)
     // 删除之前创建的食物
     remove()
 
@@ -52,6 +52,4 @@
 
 })()
 
-// 测试
-// var map = document.querySelector('#map')
-// var food = new Food(map)
+
