@@ -1,6 +1,5 @@
 // 匿名函数自调用，避免命名冲突
-;
-(function () {
+;(function (window) {
 
   var position = 'absolute'
   var elements = [] //收集创建的食物元素，为后续删除做准备
@@ -29,6 +28,7 @@
     f.style.backgroundColor = this.color
     f.style.top = this.y + 'px'
     f.style.left = this.x + 'px'
+    f.style.borderRadius = '50%'
     map.appendChild(f)
   }
 
@@ -50,6 +50,6 @@
 
   window.Food = Food
 
-})()
+})(window)
 
 

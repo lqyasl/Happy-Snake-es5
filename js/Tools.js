@@ -1,4 +1,5 @@
-;(function () {
+// 工具对象
+;(function (window) {
   var Tools = {
     getRandomIntInclusive (min, max) {
       min = Math.ceil(min);
@@ -14,4 +15,4 @@
   }
 
   window.Tools = Tools
-})()
+})(window)

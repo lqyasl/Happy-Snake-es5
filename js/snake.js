@@ -1,5 +1,5 @@
 // 蛇对象
-;(function () {
+;(function (window) {
   var position = 'absolute'
   var elements = [] //存放蛇节元素
 
@@ -94,5 +94,5 @@
   }
 
   window.Snake = Snake
-})()
+})(window)
 

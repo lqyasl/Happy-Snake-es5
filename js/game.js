@@ -1,5 +1,5 @@
 // 游戏对象
-;(function () {
+;(function (window) {
   var that //存储this的索引
   var timerId
 
@@ -69,5 +69,5 @@
 
   window.Game = Game
 
-})()
+})(window)
 
