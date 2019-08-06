@@ -9,7 +9,6 @@
     this.snake = new Snake(map)
     this.map = map
     that = this
-    this.start()
   }
 
   Game.prototype.start = function () {
@@ -46,7 +45,7 @@
         clearInterval(timerId)
       }
 
-    }, 200)
+    }, 400)
   }
 
   function bindKey () {
@@ -72,6 +71,3 @@
 
 })()
 
-// 测试代码
-var map = document.getElementById('map')
-var game = new Game(map)
